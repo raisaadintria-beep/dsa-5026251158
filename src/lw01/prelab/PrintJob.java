@@ -21,6 +21,9 @@ public int getPages () {
 public abstract int calculateCharge() ;
 
 public int calculateCostPerPage (int copies) {
+    if (copies <= 0) {
+        throw new IllegalArgumentException("Copies must be greater than 0");
+    }
     return copies  * calculateCharge() ;
 }
 
